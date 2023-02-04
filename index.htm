@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet"
+    type="text/css" />
+  <link rel="stylesheet"
+    href="./../boiran_adminpanel_arzyabi_shoma/boiran_adminpanel_arzyabi_shoma/plugins/font-awesome/css/font-awesome.min.css">
+
+  <link type="text/css" rel="stylesheet" href="./JalaliDatePicker-main/dist/jalalidatepicker.min.css" />
+
+</head>
+
+<body class="wrapper">
+
+  <nav class="navbar border" dir="rtl">
+    <div class="nav-panel-btn">
+      <button class="btn btn-lg" onclick="sidebar_func()"><img src="./img/menu.png">پنل</button>
+    </div>
+  </nav>
+  <main>
+    <div class="content-wrapper container" id="main-container">
+      <div id="second-header border">
+        <div class="release-btns">
+          <button type=" button" class="btn btn-outline-success green-btn"><label class="btn-label">تایید و
+              انتشار</label></button>
+          <button type="button" class="btn btn-danger red-btn release-btn2"><label class="btn-label">پیش
+              نویس</label></button>
+        </div>
+      </div>
+      <div dir="rtl" class="container content-wrapper">
+        <!-- right part of page -->
+        <div class="right-div">
+          <div>
+            <form>
+              <label class="labels">عنوان محصول</label><br>
+              <input class="border" type="text" />
+
+              <br><label class="labels">انتخاب دسته بندی</label><br>
+              <select class="select-category border form-control form-select">
+                <option value="" disabled selected hidden><label>انتخاب دسته بندی</label></option>
+                <option>موبایل</option>
+              </select>
+
+              <br><label class="labels">انتخاب برند</label><br>
+              <select class="select-category border form-control form-select" name="dropdown">
+                <option value="" disabled selected hidden><label>انتخاب برند</label></option>
+                <option>سامسونگ</option>
+              </select>
+
+              <br><label class="labels">وزن(گرم)</label><br>
+              <input class="border" type="number" name="first_name" />
+
+              <br><label class="labels">موجودی انبار</label><br>
+              <input class="border" type="number" name="first_name" />
+
+              <br><label class="labels">برچسب ها</label><br>
+              <input class="border" type="text" name="first_name" data-role="tagsinput" />
+
+              <br><label class="labels">شناسه کالا</label><br>
+              <input class="border" type="text" name="first_name" />
+
+              <br>
+              <div class="form-check form-switch right-div switch">
+                <label class="form-check-label">امکان بازگشت کالا</label>
+                <input class="form-check-input" type="checkbox">
+              </div>
+
+            </form>
+          </div>
+          <div class="border right-dives" id="shipping">
+            <form>
+              <img class="truck-img" src="./img/icons8-truck.gif">
+              <label>تنظیمات حمل و نقل</label>
+              <div class="line-1"></div>
+              <div class="form-check form-switch right-div switch">
+                <div style="justify-content: start;"><label class="form-check-label shipping-label">حمل و نقل
+                    رایگان</label></div>
+                <input class="form-check-input" type="checkbox">
+              </div>
+              <br>
+              <div class="form-check form-switch right-div switch">
+                <label class="form-check-label shipping-label">کرایه ثابت</label>
+                <input class="form-check-input" type="checkbox" id="fixed-fare" onclick="myFunction()">
+              </div>
+              <br>
+              <div class="shiping-child">
+                <label class="shipping-label" id="shipping-cost" style="display: none;">هزینه حمل و نقل
+                  <input type="number" class="border" id="shiping-cost-child">
+              </div>
+              </label>
+            </form>
+          </div>
+          <div class="border right-dives" id="stock-warning">
+            <label class="div-labels">اخطار کم بودن موجودی</label>
+            <div class="line-1"></div>
+            <br>
+            <div class="count-of-stock">
+              <label class="div-labels">تعداد</label>
+              <input type="number" class="border" class="div-input">
+            </div>
+
+          </div>
+          <div class="border right-dives" id="video-upload">
+            <div class="video-link">
+              <label class="div-labels">لینک ویدیو</label>
+              <input type="text" class="border" id="video-link-input">
+            </div>
+            <div class="line-1" id="video-line"></div>
+            <label class="div-labels" style="opacity: 0.6;">لینک ویدیو یا ویمو.آپارات و یا انواع پرونده
+              های خاص مانند، MP4،
+              ogv، WebM ،را وارد
+              کنید</label>
+            <div class="video-btns">
+              <button type="button" class="btn btn-outline-success green-btn"><label class="btn-label">آپلود
+                  ویدیو</label></button>
+              <button type="button" class="btn btn-danger red-btn"><label class="btn-label">انتخاب
+                  ویدیو</label></button>
+            </div>
+          </div>
+          <div class="border right-dives">
+            <label class="div-labels">اطلاعات سئو</label>
+            <div class="line-1"></div>
+            <br>
+            <label class="div-labels">عنوان متا</label>
+            <br>
+            <input type="text" class="div-labels border" id="meta-input">
+            <div>
+              <label class="div-labels">توضیحات متا</label>
+              <br>
+              <textarea cols="55" rows="5" class="div-labels border" id="text-area"></textarea>
+            </div>
+          </div>
+
+        </div>
+        <!-- left part of page -->
+        <div class="left-div">
+          <div class="border left-dives" style="margin-top: 1rem !important;">
+            <label class="div-labels">تصاویر کالا</label>
+            <div class="line-1"></div>
+            <br>
+            <div class="border" id="image-div">
+              <img src="./img/image.png" id="img-1">
+            </div>
+            <div class="upload-img-btn">
+              <label class="div-labels" style="opacity: 0.6;"">گالری تصاویر (اندازه تصاویر زیر 512 * 512 نباشد)</label>
+                  <button class=" btn btn-outline-success green-btn"><label class="btn-label">آپلود
+                  عکس</label></button>
+            </div>
+          </div>
+          <div class="border left-dives">
+            <form>
+              <label class="div-labels">قیمت محصول + موجودی انبار</label>
+              <div class="line-1"></div>
+              <div id="div-price">
+                <div>
+                  <label>قیمت</label><br>
+                  <input class="border" type="number" placeholder="واحد با تومان">
+                </div>
+                <div>
+                  <label>موجودی انبار فروشنده</label><br>
+                  <input class="border" type="number" placeholder="تعداد کالا در انبار">
+                </div>
+                <div>
+                  <label>حداکثر تاریخ برای تخفیف</label><br>
+                  <input data-jdp onfocus="date_func()" class="border" placeholder="1401/10/22" />
+                </div>
+                <div>
+                  <label>تخفیف</label><br>
+                  <input id="price-input-child-4" class="border" type="number" placeholder="مبلغ به عدد یا درصد">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="border left-dives">
+            <form>
+              <div>
+                <label class="div-labels">ویژگی های کالا</label>
+                <div class="line-1"></div>
+                <div id="div-product-property">
+                  <div>
+                    <label class="div-labels">ویژگی</label><br>
+                    <select class="border form-control form-select select-property">
+                      <option disabled selected hidden>انتخاب ویژگی محصول</option>
+                      <option value="">ویژگی 1</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="div-labels">رنگ</label><br>
+                    <select class="border form-control form-select select-property">
+                      <option disabled selected hidden>انتخاب رنگ</option>
+                      <option value="">رنگ 1</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="div-labels">سایر ویژگی(اختیاری)</label><br>
+                    <select class="border form-control form-select select-property" id="select-child-3">
+                      <option disabled selected hidden>درج ویژگی</option>
+                      <option value="">سایر ویژگی 1</option>
+                    </select>
+                    <p class="note">ویژگی های این محصول را انتخاب کنید و سپس مقادیر ورودی هر ویژگی را وارد کنید</p>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <aside class="sidebar" dir="rtl">
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa fa-dashboard"></i>
+            <p class="aside-text">افزودن محصول جدید</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa fa-product-hunt"></i>
+            <p class="aside-text">لیست محصولات</p>
+          </a>
+        </li>
+
+      </ul>
+    </aside>
+  </main>
+
+</body>
+<script src="js.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="./JalaliDatePicker-main/dist/jalalidatepicker.min.js"></script>
+
+</html>
